@@ -1,0 +1,27 @@
+Bom dia!
+
+Esqueci de avisar que o prazo máximo é até sexta (10/06) às 23h59.
+
+Em 07/06/2016 18:21, Djeison Hart escreveu:
+>
+> Boa noite!
+>
+> Em anexo estou mandando o layout que deverá ser montado, conforme o que aprendemos em curso.
+>
+> É um CRUD normal que deve fazer:
+>
+>     Ter um cadastro na lateral esquerda e uma lista na lateral direita;
+>     Adicionar dados apenas com todos os campos preenchidos;
+>     Atualizar a lista na hora que cadastrar;
+>     Poder editar ao clicar no botão verde;
+>     Poder excluir ao clicar no botão vermelho;
+>     Ao editar, o cadastro deve mudar conforme a segunda imagem;
+>     O texto de atenção abaixo é só descritivo e só deve aparecer quando editar a imagem.
+>
+> O peso da prova é 100, sendo 70% a aplicação funcional e 30% de layout e organização dos códigos.
+>
+> Qualquer dúvida, estou a disposição. Boa sorte.
+>
+>
+>
+> Djeison Hart.

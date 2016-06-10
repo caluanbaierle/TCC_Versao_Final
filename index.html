@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+	<title>Caluan Miugel Baierle</title>
+	<meta charset="utf-8">
+	
+	<!-- Style -->	
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/Sweetalert/sweetalert.css">
+
+
+	<!-- Javascript -->	
+	<script type="text/javascript" src="js/sweetalert/sweetalert.min.js"></script>
+	<script type="text/javascript" src="vendor/angularjs/angular.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
+	<script type="text/javascript" src="js/controller/MeuController.js"></script>
+
+</head>
+<body ng-controller="MeuController">
+	<div class="container">
+		<div class="row"> 		
+			<div ng-if="!isEdit"  class="col-xs-12">
+				<h1>Cadastrar</h1>
+			</div>
+			<div ng-if="isEdit"  class="col-xs-12">
+				<h1>Editar</h1>
+			</div>					
+		</div>
+		<div class="row"> 		
+			<div class="col-xs-3">
+				
+				<form  ng-submit="cadastrar1(pessoa)">
+					<div class="form-group">
+						<label class="control-label">Nome e Sobrenome:</label>
+						<input required ng-model="pessoa.nome" class="form-control" placeholder="Digite seu nome completo" type="text" name="">
+					</div>
+					<div class="form-group">
+						<label>E-mail:</label>
+						<input required ng-model="pessoa.email" class="form-control" placeholder="E-mail Valido" type="email" name="">
+					</div>
+					<div class="form-group">
+						<label>Telefone:</label>
+						<input required ng-model="pessoa.telefone" class="form-control" placeholder="Informe seu telefone"  type="phone" name="">
+					</div>
+					<button ng-if="!isEdit" class="btn btn-primary pull-right"  type="submit">Adicionar</button>
+					<button ng-if="isEdit" class="btn btn-primary pull-right"  type="submit">Salvar</button>
+				</form>
+				<!-- Estudar como nao usar o form e chamar o resto -->
+				<button ng-if="isEdit" class="btn btn-danger pull-right"  ng-click="limpaCampos()">Cancelar</button>
+				<div class="clearfix"></div>
+				<div ng-if="isEdit" class="alert alert-danger">Aviso os dados são salvos automaticamente</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-xs-9">
+				<table class="table table-hover table-striped table-bordered ">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nome</th>
+							<th>Telefone</th>
+							<th>E-mail</th>
+							<th>Opções</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in dados | filter:buscar">
+							<td>{{item.id}}</td>
+							<td>{{item.nome}}</td>
+							<td>{{item.email}}</td>
+							<td>{{item.telefone}}</td>
+							<td>
+								<button ng-click="excluirDados(item)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+								<button ng-click="editarDado(item,idx)" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
