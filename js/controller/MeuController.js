@@ -50,7 +50,6 @@ myApp.controller('MeuController', function($scope){
 		                   	break;
 	                	}
 	            	}
-					$scope.dados[pessoa.id-1] = angular.copy(pessoa);
 					$scope.isEdit =false;
 					$scope.pessoa = {id: 0,nome:"",telefone:"",email:""};
 				}else{
